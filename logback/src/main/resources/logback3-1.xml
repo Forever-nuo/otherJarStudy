@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    scan = true : 是否扫描文件
+    scanPeriod = 60 seconds : 扫描周期 , 单位可以是秒,分,时等 ,最好有单位
+ -->
+<configuration >
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d===== [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="trace">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

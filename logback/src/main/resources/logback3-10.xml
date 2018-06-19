@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+    <!--文件输出-->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>myApp.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{36} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--控制台输出-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d===== [%thread] %-5level %logger{36}[%file:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--该logger就不会 追加STDOUT 的appender
+        只会输出到文件中
+    -->
+    <logger level="trace" name="com.forever.logback.LombokSlf4Test" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

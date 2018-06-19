@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration >
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d===== [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger level="INFO" name="com.forever.logback"/>
+    <logger level="trace" name="com.forever.logback.LombokSlf4Test"/>
+
+    <root level="OFF">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

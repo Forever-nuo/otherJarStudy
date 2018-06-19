@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <!--定义变量-->
+    <property name="appName1" value ="appName1"/>
+
+    <property name="appName1.password" value ="名称嵌套"/>
+    <!--引用变量-->
+    <contextName>${${appName1}.password}</contextName>
+    <!--控制台输出-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d==%contextName === [%thread] %-5level %logger{36}[%file:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
